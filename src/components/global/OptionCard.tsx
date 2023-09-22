@@ -19,11 +19,11 @@ const OptionCard: FC<IOptionCardProps> = ({ step, id, active, onClick }) => {
       flexGrow={{ sm: 1 }}
       borderRadius='8px'
       bgcolor={isSelected ? alpha(colors[id], 0.15) : 'base.cards'}
-      alignItems={'center'}
+      alignItems='center'
       justifyContent={!isOccasion ? 'flex-end' : 'center'}
       border={isSelected ? `1px solid ${colors[id]}` : 'none'}
       gap='8px'
-      paddingBottom={{ xs: !isOccasion ? '16px' : 0, sm: 0 }}
+      paddingBottom={{ xs: !isOccasion ? '16px' : 0, sm: '16px' }}
       sx={{
         cursor: 'pointer',
         '&:hover': {

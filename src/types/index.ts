@@ -38,10 +38,18 @@ export type TGuestSize = 'small' | 'medium' | 'large';
 
 export type TStep = 'occasion' | 'guestSize';
 
+export interface IForm {
+  eventName?: string;
+  date?: Date;
+  time?: TimeRanges;
+  budget?: number;
+}
+
 export interface IEvent {
   step: TStep;
   occasion?: TOccasion;
   guestSize?: TGuestSize;
+  form: IForm;
 }
 
 export interface IOptionCardProps {

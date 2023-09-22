@@ -8,7 +8,7 @@ const basePalette = {
     success: '#35AC82',
   },
   action: {
-    disabledBackground: '#76A9FF',
+    disabledBackground: '#76a9ff80',
   },
 };
 

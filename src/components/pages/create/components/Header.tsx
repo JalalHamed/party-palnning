@@ -2,17 +2,25 @@ import { LinearProgress, Stack, Typography } from '@mui/material';
 import { Icon, ThemeLangButtons } from 'components/global';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { TStep } from 'types';
 
-const Header: FC<{ step: string }> = ({ step }) => {
+const Header: FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const step: TStep = useSelector((state: any) => state.event.step);
   const [value, setValue] = useState<number>(0);
 
   useEffect(() => {
+    const oneStep = 100 / 8;
+
     switch (step) {
       case 'occasion':
-        setValue(100 / 8);
+        setValue(oneStep);
+        break;
+      case 'guestSize':
+        setValue(oneStep * 2);
         break;
       default:
         break;

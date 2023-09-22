@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { Buttons, GuestSize, Occasion } from './components';
-import { IStepsProps } from './types';
+import { TStep } from 'types';
+import { Buttons, Form, GuestSize, Occasion } from './components';
 
-const Steps: FC<IStepsProps> = ({ step }) => {
+const Steps: FC = () => {
   const event = useSelector((state: any) => state.event);
 
   return (
@@ -12,7 +12,8 @@ const Steps: FC<IStepsProps> = ({ step }) => {
         {
           occasion: <Occasion active={event.occasion} />,
           guestSize: <GuestSize active={event.guestSize} />,
-        }[step]
+          form: <Form active={event.form} />,
+        }[event.step as TStep]
       }
       <Buttons step={event.step} />
     </>
