@@ -1,6 +1,7 @@
 {
   "greetings": "Hi, {{name}} 👋",
   "next": "Next",
+  "previous": "Previous",
 
   "plans": {
     "no-upcoming": "No Upcoming House Party",

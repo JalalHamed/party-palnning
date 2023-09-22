@@ -1,3 +1,5 @@
+import Buttons from './Buttons/Buttons';
+import GuestSize from './GuestSize';
 import Occasion from './Occasion';
 
-export { Occasion };
+export { Buttons, GuestSize, Occasion };

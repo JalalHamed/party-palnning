@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-import { TOccasion } from 'types';
+import { TOccasion, TStep } from 'types';
 
 export interface IStepsProps {
-  step: 'occasion';
+  step: TStep;
 }
 
 export interface IOccasionProps {

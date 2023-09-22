@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import localforage from 'localforage';
 import { persistReducer } from 'redux-persist';
-import { IEvent, TGuestSize, TOccasion, TSteps } from 'types';
+import { IEvent, TGuestSize, TOccasion, TStep } from 'types';
 
 const initialState: IEvent = {
   step: 'occasion',
@@ -13,7 +13,7 @@ const eventSlice = createSlice({
   name: 'event',
   initialState,
   reducers: {
-    setStep: (state, action: PayloadAction<TSteps>) => {
+    setStep: (state, action: PayloadAction<TStep>) => {
       state.step = action.payload;
     },
     setOccasion: (state, action: PayloadAction<TOccasion>) => {

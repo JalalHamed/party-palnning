@@ -12,6 +12,11 @@ declare module '@mui/material/styles' {
     icon: {
       main: string;
     };
+    input: {
+      background: string;
+      border: string;
+      placeholder: string;
+    };
   }
 }
 
@@ -31,10 +36,10 @@ export interface IHistory {
 
 export type TGuestSize = 'small' | 'medium' | 'large';
 
-export type TSteps = 'occasion' | 'guestSize';
+export type TStep = 'occasion' | 'guestSize';
 
 export interface IEvent {
-  step: TSteps;
+  step: TStep;
   occasion?: TOccasion;
   guestSize?: TGuestSize;
 }
