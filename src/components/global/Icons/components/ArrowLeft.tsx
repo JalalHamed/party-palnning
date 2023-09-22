@@ -2,7 +2,7 @@ import { SvgIconProps, useTheme } from '@mui/material';
 
 export default function ArrowLeft({ ...rest }: SvgIconProps) {
   const { palette } = useTheme();
-  const currentLang = localStorage.getItem('i18nextLng');
+  const isFa = localStorage.getItem('i18nextLng') === 'fa';
 
   return (
     <svg
@@ -13,7 +13,7 @@ export default function ArrowLeft({ ...rest }: SvgIconProps) {
       xmlns='http://www.w3.org/2000/svg'
       style={{
         cursor: 'pointer',
-        transform: `rotate(${currentLang === 'fa' ? '180' : '0'}deg)`,
+        transform: `rotate(${isFa ? '180' : '0'}deg)`,
       }}
       {...rest}
     >

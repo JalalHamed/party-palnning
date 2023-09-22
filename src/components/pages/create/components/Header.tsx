@@ -5,28 +5,18 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { TState } from 'store';
-import { TStep } from 'types';
+import { STEPS } from './Steps/constants';
 
 const Header: FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const step: TStep = useSelector((state: TState) => state.event.step);
+  const step = useSelector((state: TState) => state.event.step);
   const [value, setValue] = useState<number>(0);
+  const oneStep = 100 / 8;
 
   useEffect(() => {
-    const oneStep = 100 / 8;
-
-    switch (step) {
-      case 'occasion':
-        setValue(oneStep);
-        break;
-      case 'guestSize':
-        setValue(oneStep * 2);
-        break;
-      default:
-        break;
-    }
-  }, [step]);
+    setValue((STEPS.indexOf(step) + 1) * oneStep);
+  }, [step, oneStep]);
 
   return (
     <Stack gap='18px'>

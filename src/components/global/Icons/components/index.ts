@@ -3,6 +3,9 @@ import ProfilePicWrapper from './ProfilePicWrapper';
 import Large from './guest-size/Large';
 import Medium from './guest-size/Medium';
 import Small from './guest-size/Small';
+import Budget from './input/Budget';
+import Date from './input/Date';
+import Time from './input/Time';
 import Anniversary from './occasions/Anniversary';
 import Birthday from './occasions/Birthday';
 import Dinner from './occasions/Dinner';
@@ -15,7 +18,9 @@ export {
   Anniversary,
   ArrowLeft,
   Birthday,
+  Budget,
   Dark,
+  Date,
   Dinner,
   Large,
   Light,
@@ -24,4 +29,5 @@ export {
   Other,
   ProfilePicWrapper,
   Small,
+  Time,
 };

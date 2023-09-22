@@ -35,6 +35,13 @@
         "title": "Large",
         "subtitle": "(60+) guests"
       }
+    },
+
+    "form": {
+      "event-name": "Event Name",
+      "date": "Date",
+      "time": "Time",
+      "budget": "Budget"
     }
   }
 }

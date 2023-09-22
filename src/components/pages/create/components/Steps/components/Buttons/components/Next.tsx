@@ -18,9 +18,7 @@ const Next: FC = () => {
         dispatch(setStep('guestSize'));
         break;
       case 'guestSize':
-        dispatch(setStep('guestSize'));
-        break;
-      default:
+        dispatch(setStep('form'));
         break;
     }
   };
@@ -32,8 +30,13 @@ const Next: FC = () => {
         return !event.occasion;
       case 'guestSize':
         return !event.guestSize;
-      default:
-        return;
+      case 'form':
+        return (
+          !event.form.budget ||
+          !event.form.date ||
+          !event.form.eventName ||
+          !event.form.time
+        );
     }
   };
 

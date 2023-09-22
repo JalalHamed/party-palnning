@@ -13,7 +13,7 @@ const ThemeLangButtons: FC = () => {
     useSelector((state: TState) => state.theme.theme) === 'light'
       ? 'dark'
       : 'light';
-  const currentLang = localStorage.getItem('i18nextLng');
+  const isFa = localStorage.getItem('i18nextLng') === 'fa';
 
   return (
     <Stack direction='row' gap='8px'>
@@ -26,14 +26,14 @@ const ThemeLangButtons: FC = () => {
         justifyContent='center'
         sx={{ cursor: 'pointer' }}
         onClick={() => {
-          i18n.changeLanguage(currentLang === 'fa' ? 'en' : 'fa');
+          i18n.changeLanguage(isFa ? 'en' : 'fa');
           // No choice, since I have to change directions and the fonts as well
           // eslint-disable-next-line no-restricted-globals
           location.reload();
         }}
       >
         <Typography variant='subtitle2' sx={{ userSelect: 'none' }}>
-          {currentLang === 'fa' ? 'En' : 'Fa'}
+          {isFa ? 'En' : 'Fa'}
         </Typography>
       </Stack>
       <Icon id={themeMode} onClick={() => dispatch(changeTheme(themeMode))} />

@@ -8,7 +8,7 @@ const Header: FC = () => {
   const { breakpoints } = useTheme();
   const isSmUp = useMediaQuery(breakpoints.up('sm'));
   const { t } = useTranslation();
-  const currentLang = localStorage.getItem('i18nextLng');
+  const isFa = localStorage.getItem('i18nextLng') === 'fa';
 
   return (
     <Stack direction='row' alignItems='center' justifyContent='space-between'>
@@ -24,7 +24,7 @@ const Header: FC = () => {
           height='32px'
           style={{
             position: 'absolute',
-            [currentLang === 'fa' ? 'left' : 'right']: isSmUp ? '28px' : '20px',
+            [isFa ? 'left' : 'right']: isSmUp ? '28px' : '20px',
             top: isSmUp ? '28px' : '22px',
           }}
         />

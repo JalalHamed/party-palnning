@@ -3,7 +3,9 @@ import {
   Anniversary,
   ArrowLeft,
   Birthday,
+  Budget,
   Dark,
+  Date,
   Dinner,
   Large,
   Light,
@@ -12,6 +14,7 @@ import {
   Other,
   ProfilePicWrapper,
   Small,
+  Time,
 } from './components';
 
 const Icon = ({ ...rest }: SvgIconProps) => {
@@ -31,6 +34,9 @@ const Icon = ({ ...rest }: SvgIconProps) => {
           small: <Small {...rest} />,
           medium: <Medium {...rest} />,
           large: <Large {...rest} />,
+          date: <Date {...rest} />,
+          time: <Time {...rest} />,
+          budget: <Budget {...rest} />,
         }[rest.id as string]
       }
     </>

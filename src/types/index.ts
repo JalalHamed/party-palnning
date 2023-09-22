@@ -36,7 +36,7 @@ export interface IHistory {
 
 export type TGuestSize = 'small' | 'medium' | 'large';
 
-export type TStep = 'occasion' | 'guestSize';
+export type TStep = 'occasion' | 'guestSize' | 'form';
 
 export interface IForm {
   eventName?: string;

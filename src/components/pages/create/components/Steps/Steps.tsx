@@ -13,7 +13,7 @@ const Steps: FC = () => {
         {
           occasion: <Occasion active={event.occasion} />,
           guestSize: <GuestSize active={event.guestSize} />,
-          form: <Form active={event.form} />,
+          form: <Form form={event.form} />,
         }[event.step as TStep]
       }
       <Buttons step={event.step} />
