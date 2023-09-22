@@ -1,5 +1,5 @@
 import Checklist from './checklist/Checklist';
-import CreateEvent from './create-event/CreateEvent';
+import CreateEvent from './create/Create';
 import Plans from './plans/Plans';
 
 export { Checklist, CreateEvent, Plans };

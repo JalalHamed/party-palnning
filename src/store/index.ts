@@ -8,10 +8,12 @@ import {
   REHYDRATE,
   persistStore,
 } from 'redux-persist';
+import eventSlice from './eventSlice';
 import themeSlice from './themeSlice';
 
 const rootReducer = combineReducers({
   theme: themeSlice,
+  event: eventSlice,
 });
 
 const store = configureStore({

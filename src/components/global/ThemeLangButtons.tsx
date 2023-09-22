@@ -8,11 +8,14 @@ import { Icon } from '.';
 const ThemeLangButtons: FC = () => {
   const { i18n } = useTranslation();
   const dispatch = useDispatch();
-  const themeMode = useSelector((state: any) => state.theme.theme);
+  const themeMode =
+    useSelector((state: any) => state.theme.theme) === 'light'
+      ? 'dark'
+      : 'light';
   const currentLang = localStorage.getItem('i18nextLng');
 
   return (
-    <>
+    <Stack direction='row' gap='8px'>
       <Stack
         bgcolor='input.background'
         borderRadius='50px'
@@ -28,16 +31,12 @@ const ThemeLangButtons: FC = () => {
           location.reload();
         }}
       >
-        <Typography variant='subtitle2' color='texture.main'>
+        <Typography variant='subtitle2' sx={{ userSelect: 'none' }}>
           {currentLang === 'fa' ? 'En' : 'Fa'}
         </Typography>
       </Stack>
-      {themeMode === 'light' ? (
-        <Icon id='Dark' onClick={() => dispatch(changeTheme('dark'))} />
-      ) : (
-        <Icon id='Light' onClick={() => dispatch(changeTheme('light'))} />
-      )}
-    </>
+      <Icon id={themeMode} onClick={() => dispatch(changeTheme(themeMode))} />
+    </Stack>
   );
 };
 

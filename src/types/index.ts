@@ -9,9 +9,8 @@ declare module '@mui/material/styles' {
       background: string;
       cards: string;
     };
-    texture: {
+    icon: {
       main: string;
-      grey: string;
     };
   }
 }
@@ -19,13 +18,22 @@ declare module '@mui/material/styles' {
 export type TTheme = 'dark' | 'light';
 
 export type TOccasion =
-  | 'Anniversary'
-  | 'Birthday'
-  | 'Dinner'
-  | 'MeetUp'
-  | 'Other';
+  | 'anniversary'
+  | 'birthday'
+  | 'dinner'
+  | 'meetUp'
+  | 'other';
 
 export interface IHistory {
   title: string;
   date: Date;
+}
+
+export interface IEvent {
+  occasion?: TOccasion;
+}
+
+export interface IOptionCardProps {
+  id: string;
+  active: string;
 }

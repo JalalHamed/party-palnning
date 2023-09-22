@@ -1,3 +1,4 @@
+import ArrowLeft from './ArrowLeft';
 import ProfilePicWrapper from './ProfilePicWrapper';
 import Anniversary from './occasions/Anniversary';
 import Birthday from './occasions/Birthday';
@@ -9,6 +10,7 @@ import Light from './theme-mode/Light';
 
 export {
   Anniversary,
+  ArrowLeft,
   Birthday,
   Dark,
   Dinner,

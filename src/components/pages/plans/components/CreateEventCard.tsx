@@ -2,9 +2,11 @@ import { Button, Stack, Typography } from '@mui/material';
 import Clipboard from 'assets/images/Clipboard.png';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const CreateEventCard: FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <Stack
@@ -28,6 +30,7 @@ const CreateEventCard: FC = () => {
         <Button
           variant='contained'
           sx={{ width: 'fit-content', p: '11px 16px 12px' }}
+          onClick={() => navigate('/create')}
         >
           <Typography variant='body2' color='#FFF' textTransform='uppercase'>
             {t('plans.create')}

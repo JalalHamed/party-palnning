@@ -1,9 +1,23 @@
 {
   "greetings": "Hi, {{name}} 👋",
+  "next": "Next",
 
   "plans": {
     "no-upcoming": "No Upcoming House Party",
     "plan-party": "Plan your house party",
     "create": "Create new Event"
+  },
+
+  "create": {
+    "header": "Create a New Event",
+
+    "occasions": {
+      "title": "What is the occasion?",
+      "birthday": "Birthday",
+      "anniversary": "Anniversary",
+      "dinner": "Dinner",
+      "meet-up": "Meet up",
+      "other": "Other"
+    }
   }
 }

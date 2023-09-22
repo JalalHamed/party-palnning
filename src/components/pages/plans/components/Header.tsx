@@ -1,7 +1,6 @@
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import UserProfilePic from 'assets/images/User.png';
-import { Icon } from 'components/global';
-import ThemeLangButtons from 'components/global/ThemeLangButtons';
+import { Icon, ThemeLangButtons } from 'components/global';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -13,12 +12,10 @@ const Header: FC = () => {
 
   return (
     <Stack direction='row' alignItems='center' justifyContent='space-between'>
-      <Typography variant='h3' color='texture.main'>
-        {t('greetings', { name: 'Alex' })}
-      </Typography>
+      <Typography variant='h3'>{t('greetings', { name: 'Alex' })}</Typography>
       <Stack direction='row' alignItems='center' gap='8px'>
         <ThemeLangButtons />
-        <Icon id='ProfilePicWrapper' />
+        <Icon id='profilePicWrapper' />
         <img
           src={UserProfilePic}
           alt='User Profile Pic'
