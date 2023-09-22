@@ -14,6 +14,7 @@ export const STEPS = [
   'form',
   'eInvite',
   'foodArrangement',
+  'alcohol',
 ]; // orders matter
 
 export const FORM_INPUTS = [

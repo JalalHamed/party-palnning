@@ -41,7 +41,8 @@ export type TStep =
   | 'guestSize'
   | 'form'
   | 'eInvite'
-  | 'foodArrangement';
+  | 'foodArrangement'
+  | 'alcohol';
 
 export interface IForm {
   eventName?: string;
@@ -58,6 +59,8 @@ export type TFoodArrangement =
   | 'book-a-caterer'
   | 'potluck';
 
+export type TAlcohol = 'yes-order' | 'yes-have' | 'bring-your-own' | 'no';
+
 export interface IEvent {
   step: TStep;
   occasion?: TOccasion;
@@ -65,6 +68,7 @@ export interface IEvent {
   form: IForm;
   eInvite?: TEInvite;
   foodArrangement?: TFoodArrangement;
+  alcohol?: TAlcohol;
 }
 
 export interface IOptionCardProps {

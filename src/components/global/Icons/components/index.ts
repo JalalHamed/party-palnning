@@ -11,12 +11,14 @@ import Birthday from './occasions/Birthday';
 import Dinner from './occasions/Dinner';
 import MeetUp from './occasions/MeetUp';
 import Other from './occasions/Other';
+import Alcohol from './text-options/Alcohol';
 import EInvite from './text-options/EInvite';
 import FoodArrangement from './text-options/FoodArrangement';
 import Dark from './theme-mode/Dark';
 import Light from './theme-mode/Light';
 
 export {
+  Alcohol,
   Anniversary,
   ArrowLeft,
   Birthday,

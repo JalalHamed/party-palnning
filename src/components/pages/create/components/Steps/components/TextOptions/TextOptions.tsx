@@ -4,14 +4,14 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { TState } from 'store';
-import { setEInvite, setFoodArrangement } from 'store/eventSlice';
-import { TEInvite, TFoodArrangement } from 'types';
-import { getI18nPageKey, getOptions } from './utils';
+import { setAlcohol, setEInvite, setFoodArrangement } from 'store/eventSlice';
+import { TAlcohol, TEInvite, TFoodArrangement } from 'types';
+import { getI18nStepKey, getOptions } from './utils';
 
 const TextOptions: FC = () => {
   const { t } = useTranslation();
   const event = useSelector((state: TState) => state.event);
-  const i18nPageKey = getI18nPageKey(event.step);
+  const i18nPageKey = getI18nStepKey(event.step);
   const options = getOptions(event.step);
   const { palette } = useTheme();
   const dispatch = useDispatch();
@@ -27,6 +27,9 @@ const TextOptions: FC = () => {
         break;
       case 'foodArrangement':
         dispatch(setFoodArrangement(option as TFoodArrangement));
+        break;
+      case 'alcohol':
+        dispatch(setAlcohol(option as TAlcohol));
         break;
     }
   };

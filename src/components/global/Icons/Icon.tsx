@@ -1,5 +1,6 @@
 import { SvgIconProps } from '@mui/material';
 import {
+  Alcohol,
   Anniversary,
   ArrowLeft,
   Birthday,
@@ -41,6 +42,7 @@ const Icon = ({ ...rest }: SvgIconProps) => {
           budget: <Budget {...rest} />,
           eInvite: <EInvite {...rest} />,
           foodArrangement: <FoodArrangement {...rest} />,
+          alcohol: <Alcohol {...rest} />,
         }[rest.id as string]
       }
     </>

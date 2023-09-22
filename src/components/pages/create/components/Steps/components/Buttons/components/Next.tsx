@@ -11,8 +11,7 @@ const Next: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const event = useSelector((state: TState) => state.event);
-  const isOccasion = event.step === 'occasion';
-  const width = isOccasion ? '100%' : '69%';
+  const width = event.step === 'occasion' ? '100%' : '69%';
 
   const getDisabledStatus = (): boolean => {
     if (event.step === 'form')

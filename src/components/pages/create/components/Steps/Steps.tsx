@@ -16,6 +16,7 @@ const Steps: FC = () => {
           form: <Form />,
           eInvite: <TextOptions />,
           foodArrangement: <TextOptions />,
+          alcohol: <TextOptions />,
         }[event.step as TStep]
       }
       <Buttons step={event.step} />

@@ -3,6 +3,7 @@ import localforage from 'localforage';
 import { persistReducer } from 'redux-persist';
 import {
   IEvent,
+  TAlcohol,
   TEInvite,
   TFoodArrangement,
   TGuestSize,
@@ -22,6 +23,7 @@ const initialState: IEvent = {
   },
   eInvite: undefined,
   foodArrangement: undefined,
+  alcohol: undefined,
 };
 
 const eventSlice = createSlice({
@@ -55,6 +57,9 @@ const eventSlice = createSlice({
     setFoodArrangement: (state, action: PayloadAction<TFoodArrangement>) => {
       state.foodArrangement = action.payload;
     },
+    setAlcohol: (state, action: PayloadAction<TAlcohol>) => {
+      state.alcohol = action.payload;
+    },
   },
 });
 
@@ -73,5 +78,6 @@ export const {
   setBudget,
   setEInvite,
   setFoodArrangement,
+  setAlcohol,
 } = eventSlice.actions;
 export default persistedEventReducer;

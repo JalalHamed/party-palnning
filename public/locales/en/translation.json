@@ -56,6 +56,14 @@
       "home-cooked-food": "Home cooked food",
       "book-a-caterer": "Book a caterer",
       "potluck": "Potluck"
+    },
+
+    "alcohol": {
+      "title": "Will there be alcohol?",
+      "yes-order": "Yes, I need to order it",
+      "yes-have": "Yes, I have it",
+      "bring-your-own": "Bring your own bottle",
+      "no": "No"
     }
   }
 }
