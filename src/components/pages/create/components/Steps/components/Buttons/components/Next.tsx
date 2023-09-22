@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { TState } from 'store';
 import { setStep } from 'store/eventSlice';
+import { isValidDate, isValidTime } from 'utils';
 
 const Next: FC = () => {
   const { t } = useTranslation();
@@ -33,9 +34,9 @@ const Next: FC = () => {
       case 'form':
         return (
           !event.form.budget ||
-          !event.form.date ||
+          !isValidDate(event.form.date as string) ||
           !event.form.eventName ||
-          !event.form.time
+          !isValidTime(event.form.time as string)
         );
     }
   };

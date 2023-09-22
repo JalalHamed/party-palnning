@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { TState } from 'store';
 import { setBudget, setDate, setEventName, setTime } from 'store/eventSlice';
+import { isValidDate, isValidTime } from 'utils';
 import { IInput } from '../types';
 
 const Input: FC<IInput> = ({ id, i18nKey, placeholder, hasIcon, type }) => {
@@ -30,6 +31,14 @@ const Input: FC<IInput> = ({ id, i18nKey, placeholder, hasIcon, type }) => {
     }
   };
 
+  const getBorderColor = () => {
+    if (form.date)
+      if (id === 'date' && !isValidDate(form.date)) return 'alerts.critical';
+    if (form.time)
+      if (id === 'time' && !isValidTime(form.time)) return 'alerts.critical';
+    return 'input.border';
+  };
+
   return (
     <Stack gap='8px'>
       <Typography variant='body2'>{t(`create.form.${i18nKey}`)}</Typography>
@@ -40,7 +49,7 @@ const Input: FC<IInput> = ({ id, i18nKey, placeholder, hasIcon, type }) => {
           sx={{
             bgcolor: 'base.cards',
             border: '1px solid',
-            borderColor: 'input.border',
+            borderColor: getBorderColor(),
             borderRadius: '8px',
             padding: '6px 12px',
             fontSize: '12px',
