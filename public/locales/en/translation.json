@@ -1,0 +1,9 @@
+{
+  "greetings": "Hi, {{name}} 👋",
+
+  "plans": {
+    "no-upcoming": "No Upcoming House Party",
+    "plan-party": "Plan your house party",
+    "create": "Create new Event"
+  }
+}

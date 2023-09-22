@@ -2,6 +2,7 @@ import { CacheProvider } from '@emotion/react';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { FC, PropsWithChildren, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import {
   basePalette,
   breakpoints,
@@ -9,12 +10,13 @@ import {
   darkPalette,
   lightPalette,
   shadows,
+  typography,
 } from 'styles';
-import typography from 'styles/theme/typography';
+import 'styles/globals.css';
 
 const StyleProvider: FC<PropsWithChildren> = ({ children }) => {
-  const themeMode = 'dark'; // TODO: read from state
   const { i18n } = useTranslation();
+  const themeMode = useSelector((state: any) => state.theme.theme);
 
   const theme = useMemo(
     () =>

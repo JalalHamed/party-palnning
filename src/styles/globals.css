@@ -1,64 +1,11 @@
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 100;
-  src: url('assets/fonts/Montserrat-Thin.ttf') format('ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 @font-face {
-  font-family: Montserrat;
+  font-family: Iranyekan;
   font-style: normal;
-  font-weight: 200;
-  src: url('assets/fonts/Montserrat-ExtraLight.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  src: url('assets/fonts/Montserrat-Light.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 400;
-  src: url('assets/fonts/Montserrat-Regular.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  src: url('assets/fonts/Montserrat-Medium.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  src: url('assets/fonts/Montserrat-SemiBold.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 700;
-  src: url('assets/fonts/Montserrat-Bold.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 800;
-  src: url('assets/fonts/Montserrat-ExtraBold.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 900;
-  src: url('assets/fonts/Montserrat-Black.ttf') format('ttf');
+  font-weight: normal;
+  src: url('/public/fonts/IRANYekanWebRegular.woff') format('woff'),
+    url('/public/fonts/IRANYekanWebRegular.woff2') format('woff2');
 }
 
 * {

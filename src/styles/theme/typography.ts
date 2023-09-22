@@ -1,9 +1,10 @@
 const typography = {
-  fontFamily: 'Montserrat',
+  fontFamily:
+    localStorage.getItem('i18nextLng') === 'fa' ? 'Iranyekan' : 'Montserrat',
   button: {
     textTransform: undefined,
   },
-  heading: {
+  h3: {
     fontSize: '18px',
     fontWeight: '700',
     lineHeight: '24px',
