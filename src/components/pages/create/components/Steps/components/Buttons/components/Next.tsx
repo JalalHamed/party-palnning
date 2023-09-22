@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TState } from 'store';
 import { setStep } from 'store/eventSlice';
 import { isValidDate, isValidTime } from 'utils';
+import { getNextStep } from '../utils';
 
 const Next: FC = () => {
   const { t } = useTranslation();
@@ -13,34 +14,15 @@ const Next: FC = () => {
   const isOccasion = event.step === 'occasion';
   const width = isOccasion ? '100%' : '69%';
 
-  const handleNextClick = () => {
-    switch (event.step) {
-      case 'occasion':
-        dispatch(setStep('guestSize'));
-        break;
-      case 'guestSize':
-        dispatch(setStep('form'));
-        break;
-      case 'form':
-        dispatch(setStep('eInvite'));
-        break;
-    }
-  };
-
-  const getDisabledStatus = () => {
-    switch (event.step) {
-      case 'occasion':
-        return !event.occasion;
-      case 'guestSize':
-        return !event.guestSize;
-      case 'form':
-        return (
-          !event.form.budget ||
-          !isValidDate(event.form.date as string) ||
-          !event.form.eventName ||
-          !isValidTime(event.form.time as string)
-        );
-    }
+  const getDisabledStatus = (): boolean => {
+    if (event.step === 'form')
+      return (
+        !event.form.budget ||
+        !isValidDate(event.form.date as string) ||
+        !event.form.eventName ||
+        !isValidTime(event.form.time as string)
+      );
+    return !event[event.step];
   };
 
   return (
@@ -54,7 +36,7 @@ const Next: FC = () => {
         opacity: !event.step ? 0.5 : 1,
       }}
       disabled={getDisabledStatus()}
-      onClick={handleNextClick}
+      onClick={() => dispatch(setStep(getNextStep(event.step)))}
     >
       <Typography variant='body2' color='#FFF'>
         {t('next')}

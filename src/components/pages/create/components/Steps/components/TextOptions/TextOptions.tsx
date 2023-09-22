@@ -4,8 +4,8 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { TState } from 'store';
-import { setEInvite } from 'store/eventSlice';
-import { TEInvite } from 'types';
+import { setEInvite, setFoodArrangement } from 'store/eventSlice';
+import { TEInvite, TFoodArrangement } from 'types';
 import { getI18nPageKey, getOptions } from './utils';
 
 const TextOptions: FC = () => {
@@ -24,6 +24,9 @@ const TextOptions: FC = () => {
     switch (event.step) {
       case 'eInvite':
         dispatch(setEInvite(option as TEInvite));
+        break;
+      case 'foodArrangement':
+        dispatch(setFoodArrangement(option as TFoodArrangement));
         break;
     }
   };

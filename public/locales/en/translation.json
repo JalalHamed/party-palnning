@@ -48,6 +48,14 @@
       "title": "Do you want to send e-invite?",
       "yes": "Yes",
       "no": "No"
+    },
+
+    "food-arrangement": {
+      "title": "What will be the food arrangements?",
+      "order-in": "Order-in",
+      "home-cooked-food": "Home cooked food",
+      "book-a-caterer": "Book a caterer",
+      "potluck": "Potluck"
     }
   }
 }

@@ -4,25 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { setStep } from 'store/eventSlice';
 import { TStep } from 'types';
+import { getPrevStep } from '../utils';
 
 const Previous: FC<{ step: TStep }> = ({ step }) => {
   const { t } = useTranslation();
   const { palette } = useTheme();
   const dispatch = useDispatch();
-
-  const handlePrevClick = () => {
-    switch (step) {
-      case 'guestSize':
-        dispatch(setStep('occasion'));
-        break;
-      case 'form':
-        dispatch(setStep('guestSize'));
-        break;
-      case 'eInvite':
-        dispatch(setStep('form'));
-        break;
-    }
-  };
 
   return (
     <Button
@@ -37,7 +24,7 @@ const Previous: FC<{ step: TStep }> = ({ step }) => {
           backgroundColor: alpha(palette.input.background, 0.5),
         },
       }}
-      onClick={handlePrevClick}
+      onClick={() => dispatch(setStep(getPrevStep(step)))}
     >
       <Typography variant='body2' color='#FFF'>
         {t('previous')}

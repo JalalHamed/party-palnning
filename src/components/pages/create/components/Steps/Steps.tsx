@@ -15,6 +15,7 @@ const Steps: FC = () => {
           guestSize: <GuestSize active={event.guestSize} />,
           form: <Form />,
           eInvite: <TextOptions />,
+          foodArrangement: <TextOptions />,
         }[event.step as TStep]
       }
       <Buttons step={event.step} />
