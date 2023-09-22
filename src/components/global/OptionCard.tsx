@@ -2,12 +2,13 @@ import { Stack, Typography, alpha } from '@mui/material';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { TState } from 'store';
 import { IOptionCardProps } from 'types';
 import { Icon } from '.';
 
 const OptionCard: FC<IOptionCardProps> = ({ step, id, active, onClick }) => {
   const { t } = useTranslation();
-  const colors = useSelector((state: any) => state.color);
+  const colors = useSelector((state: TState) => state.color);
   const isSelected = active === id;
   const isOccasion = step === 'occasion';
 

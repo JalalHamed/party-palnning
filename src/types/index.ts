@@ -40,8 +40,8 @@ export type TStep = 'occasion' | 'guestSize';
 
 export interface IForm {
   eventName?: string;
-  date?: Date;
-  time?: TimeRanges;
+  date?: string;
+  time?: string;
   budget?: number;
 }
 
@@ -55,7 +55,7 @@ export interface IEvent {
 export interface IOptionCardProps {
   step: 'occasion' | 'guest-size';
   id: TOccasion | TGuestSize;
-  active: TOccasion | TGuestSize;
+  active: TOccasion | TGuestSize | undefined;
   onClick: any;
 }
 

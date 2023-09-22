@@ -2,18 +2,22 @@ import { Button, Typography } from '@mui/material';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { TState } from 'store';
 import { setStep } from 'store/eventSlice';
 
 const Next: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const event = useSelector((state: any) => state.event);
+  const event = useSelector((state: TState) => state.event);
   const isOccasion = event.step === 'occasion';
   const width = isOccasion ? '100%' : '69%';
 
   const handleNextClick = () => {
     switch (event.step) {
       case 'occasion':
+        dispatch(setStep('guestSize'));
+        break;
+      case 'guestSize':
         dispatch(setStep('guestSize'));
         break;
       default:

@@ -18,6 +18,8 @@ const rootReducer = combineReducers({
   color: colorSlice,
 });
 
+export type TState = ReturnType<typeof rootReducer>;
+
 const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>

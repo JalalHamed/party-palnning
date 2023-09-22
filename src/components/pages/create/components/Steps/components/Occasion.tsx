@@ -7,7 +7,7 @@ import { setOccasion } from 'store/eventSlice';
 import { TOccasion } from 'types';
 import { OCCASIONS } from '../constants';
 
-const Occasion: FC<{ active: TOccasion }> = ({ active }) => {
+const Occasion: FC<{ active: TOccasion | undefined }> = ({ active }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 

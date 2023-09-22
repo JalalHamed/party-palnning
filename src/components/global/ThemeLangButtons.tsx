@@ -2,6 +2,7 @@ import { Stack, Typography } from '@mui/material';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { TState } from 'store';
 import { changeTheme } from 'store/themeSlice';
 import { Icon } from '.';
 
@@ -9,7 +10,7 @@ const ThemeLangButtons: FC = () => {
   const { i18n } = useTranslation();
   const dispatch = useDispatch();
   const themeMode =
-    useSelector((state: any) => state.theme.theme) === 'light'
+    useSelector((state: TState) => state.theme.theme) === 'light'
       ? 'dark'
       : 'light';
   const currentLang = localStorage.getItem('i18nextLng');

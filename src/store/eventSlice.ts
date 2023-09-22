@@ -31,10 +31,10 @@ const eventSlice = createSlice({
     setEventName: (state, action: PayloadAction<string>) => {
       state.form.eventName = action.payload;
     },
-    setDate: (state, action: PayloadAction<Date>) => {
+    setDate: (state, action: PayloadAction<string>) => {
       state.form.date = action.payload;
     },
-    setTime: (state, action: PayloadAction<TimeRanges>) => {
+    setTime: (state, action: PayloadAction<string>) => {
       state.form.time = action.payload;
     },
     setBudget: (state, action: PayloadAction<number>) => {

@@ -4,12 +4,13 @@ import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { TState } from 'store';
 import { TStep } from 'types';
 
 const Header: FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const step: TStep = useSelector((state: any) => state.event.step);
+  const step: TStep = useSelector((state: TState) => state.event.step);
   const [value, setValue] = useState<number>(0);
 
   useEffect(() => {

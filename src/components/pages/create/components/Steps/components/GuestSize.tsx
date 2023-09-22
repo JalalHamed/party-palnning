@@ -7,7 +7,7 @@ import { setGuestSize } from 'store/eventSlice';
 import { TGuestSize } from 'types';
 import { GUEST_SIZE } from '../constants';
 
-const GuestSize: FC<{ active: TGuestSize }> = ({ active }) => {
+const GuestSize: FC<{ active: TGuestSize | undefined }> = ({ active }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 

@@ -3,6 +3,7 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { FC, PropsWithChildren, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { TState } from 'store';
 import {
   basePalette,
   breakpoints,
@@ -16,7 +17,7 @@ import 'styles/globals.css';
 
 const StyleProvider: FC<PropsWithChildren> = ({ children }) => {
   const { i18n } = useTranslation();
-  const themeMode = useSelector((state: any) => state.theme.theme);
+  const themeMode = useSelector((state: TState) => state.theme.theme);
 
   const theme = useMemo(
     () =>
