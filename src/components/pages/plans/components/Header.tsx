@@ -1,6 +1,7 @@
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import UserProfilePic from 'assets/images/User.png';
 import { Icon, ThemeLangButtons } from 'components/global';
+import { useIsFa } from 'hooks/useIsFa';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -8,7 +9,7 @@ const Header: FC = () => {
   const { breakpoints } = useTheme();
   const isSmUp = useMediaQuery(breakpoints.up('sm'));
   const { t } = useTranslation();
-  const isFa = localStorage.getItem('i18nextLng') === 'fa';
+  const isFa = useIsFa();
 
   return (
     <Stack direction='row' alignItems='center' justifyContent='space-between'>

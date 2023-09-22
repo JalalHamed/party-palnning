@@ -1,6 +1,7 @@
 import { AppLayout } from 'components/global';
 import { FC } from 'react';
-import { Header, Steps } from './components';
+import Header from './components/Header';
+import Steps from './components/Steps/Steps';
 
 const Create: FC = () => (
   <AppLayout gap='16px'>

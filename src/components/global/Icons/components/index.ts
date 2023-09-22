@@ -11,6 +11,7 @@ import Birthday from './occasions/Birthday';
 import Dinner from './occasions/Dinner';
 import MeetUp from './occasions/MeetUp';
 import Other from './occasions/Other';
+import EInvite from './text-options/EInvite';
 import Dark from './theme-mode/Dark';
 import Light from './theme-mode/Light';
 
@@ -22,6 +23,7 @@ export {
   Dark,
   Date,
   Dinner,
+  EInvite,
   Large,
   Light,
   Medium,

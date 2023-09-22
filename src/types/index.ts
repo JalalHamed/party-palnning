@@ -36,7 +36,7 @@ export interface IHistory {
 
 export type TGuestSize = 'small' | 'medium' | 'large';
 
-export type TStep = 'occasion' | 'guestSize' | 'form';
+export type TStep = 'occasion' | 'guestSize' | 'form' | 'eInvite';
 
 export interface IForm {
   eventName?: string;
@@ -45,11 +45,21 @@ export interface IForm {
   budget?: number;
 }
 
+export type TEInvite = 'yes' | 'no';
+
+export type TFoodArrangement =
+  | 'order-in'
+  | 'home-cooked-food'
+  | 'book-a-caterer'
+  | 'potluck';
+
 export interface IEvent {
   step: TStep;
   occasion?: TOccasion;
   guestSize?: TGuestSize;
   form: IForm;
+  eInvite?: TEInvite;
+  foodArrangement?: TFoodArrangement;
 }
 
 export interface IOptionCardProps {

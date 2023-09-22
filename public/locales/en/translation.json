@@ -42,6 +42,12 @@
       "date": "Date",
       "time": "Time",
       "budget": "Budget"
+    },
+
+    "e-invite": {
+      "title": "Do you want to send e-invite?",
+      "yes": "Yes",
+      "no": "No"
     }
   }
 }

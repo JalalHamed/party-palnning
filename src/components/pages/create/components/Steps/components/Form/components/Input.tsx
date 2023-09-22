@@ -7,12 +7,13 @@ import { TState } from 'store';
 import { setBudget, setDate, setEventName, setTime } from 'store/eventSlice';
 import { isValidDate, isValidTime } from 'utils';
 import { IInput } from '../types';
+import { useIsFa } from 'hooks/useIsFa';
 
 const Input: FC<IInput> = ({ id, i18nKey, placeholder, hasIcon, type }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const form = useSelector((state: TState) => state.event.form);
-  const isFa = localStorage.getItem('i18nextLng') === 'fa';
+  const isFa = useIsFa();
 
   const handleChange = (value: string) => {
     switch (id) {

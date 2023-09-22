@@ -18,6 +18,9 @@ const Previous: FC<{ step: TStep }> = ({ step }) => {
       case 'form':
         dispatch(setStep('guestSize'));
         break;
+      case 'eInvite':
+        dispatch(setStep('form'));
+        break;
     }
   };
 

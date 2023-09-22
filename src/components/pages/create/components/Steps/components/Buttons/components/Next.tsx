@@ -21,13 +21,15 @@ const Next: FC = () => {
       case 'guestSize':
         dispatch(setStep('form'));
         break;
+      case 'form':
+        dispatch(setStep('eInvite'));
+        break;
     }
   };
 
   const getDisabledStatus = () => {
     switch (event.step) {
       case 'occasion':
-        console.log(!event.occasion);
         return !event.occasion;
       case 'guestSize':
         return !event.guestSize;

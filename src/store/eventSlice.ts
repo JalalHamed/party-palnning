@@ -1,7 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import localforage from 'localforage';
 import { persistReducer } from 'redux-persist';
-import { IEvent, TGuestSize, TOccasion, TStep } from 'types';
+import {
+  IEvent,
+  TEInvite,
+  TFoodArrangement,
+  TGuestSize,
+  TOccasion,
+  TStep,
+} from 'types';
 
 const initialState: IEvent = {
   step: 'occasion',
@@ -13,6 +20,8 @@ const initialState: IEvent = {
     time: undefined,
     budget: undefined,
   },
+  eInvite: undefined,
+  foodArrangement: undefined,
 };
 
 const eventSlice = createSlice({
@@ -40,6 +49,12 @@ const eventSlice = createSlice({
     setBudget: (state, action: PayloadAction<number>) => {
       state.form.budget = action.payload;
     },
+    setEInvite: (state, action: PayloadAction<TEInvite>) => {
+      state.eInvite = action.payload;
+    },
+    setFoodArrangement: (state, action: PayloadAction<TFoodArrangement>) => {
+      state.foodArrangement = action.payload;
+    },
   },
 });
 
@@ -56,5 +71,7 @@ export const {
   setDate,
   setTime,
   setBudget,
+  setEInvite,
+  setFoodArrangement,
 } = eventSlice.actions;
 export default persistedEventReducer;

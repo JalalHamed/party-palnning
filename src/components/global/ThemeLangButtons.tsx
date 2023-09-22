@@ -1,4 +1,5 @@
 import { Stack, Typography } from '@mui/material';
+import { useIsFa } from 'hooks/useIsFa';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +14,7 @@ const ThemeLangButtons: FC = () => {
     useSelector((state: TState) => state.theme.theme) === 'light'
       ? 'dark'
       : 'light';
-  const isFa = localStorage.getItem('i18nextLng') === 'fa';
+  const isFa = useIsFa();
 
   return (
     <Stack direction='row' gap='8px'>

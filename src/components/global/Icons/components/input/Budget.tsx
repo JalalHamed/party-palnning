@@ -1,7 +1,8 @@
 import { SvgIconProps } from '@mui/material';
+import { useIsFa } from 'hooks/useIsFa';
 
 export default function Budget({ ...rest }: SvgIconProps) {
-  const isFa = localStorage.getItem('i18nextLng') === 'fa';
+  const isFa = useIsFa();
 
   return (
     <svg

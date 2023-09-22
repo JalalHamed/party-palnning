@@ -8,7 +8,7 @@ export const OCCASIONS = [
 
 export const GUEST_SIZE = ['small', 'medium', 'large'];
 
-export const STEPS = ['occasion', 'guestSize', 'form']; // orders matter
+export const STEPS = ['occasion', 'guestSize', 'form', 'eInvite']; // orders matter
 
 export const FORM_INPUTS = [
   { id: 'eventName', i18nKey: 'event-name' },

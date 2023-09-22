@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { TState } from 'store';
 import { TStep } from 'types';
-import { Buttons, Form, GuestSize, Occasion } from './components';
+import { Buttons, Form, GuestSize, Occasion, TextOptions } from './components';
 
 const Steps: FC = () => {
   const event = useSelector((state: TState) => state.event);
@@ -13,7 +13,8 @@ const Steps: FC = () => {
         {
           occasion: <Occasion active={event.occasion} />,
           guestSize: <GuestSize active={event.guestSize} />,
-          form: <Form form={event.form} />,
+          form: <Form />,
+          eInvite: <TextOptions />,
         }[event.step as TStep]
       }
       <Buttons step={event.step} />

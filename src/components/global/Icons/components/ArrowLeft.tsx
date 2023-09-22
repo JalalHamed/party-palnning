@@ -1,8 +1,9 @@
 import { SvgIconProps, useTheme } from '@mui/material';
+import { useIsFa } from 'hooks/useIsFa';
 
 export default function ArrowLeft({ ...rest }: SvgIconProps) {
   const { palette } = useTheme();
-  const isFa = localStorage.getItem('i18nextLng') === 'fa';
+  const isFa = useIsFa();
 
   return (
     <svg
