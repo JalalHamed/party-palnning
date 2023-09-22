@@ -2,19 +2,27 @@ import { Stack, Typography } from '@mui/material';
 import { OptionCard } from 'components/global';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setOccasion } from 'store/eventSlice';
+import { TOccasion } from 'types';
 import { OCCASIONS } from '../constants';
 
-const Occasion: FC = () => {
+const Occasion: FC<{ active: TOccasion }> = ({ active }) => {
   const { t } = useTranslation();
-  const activeOccasion = useSelector((state: any) => state.event.occasion);
+  const dispatch = useDispatch();
 
   return (
     <Stack gap='16px'>
-      <Typography variant='body2'>{t('create.occasions.title')}</Typography>
+      <Typography variant='body2'>{t('create.occasion.title')}</Typography>
       <Stack direction='row' flexWrap='wrap' gap='14px'>
         {OCCASIONS.map((occasion) => (
-          <OptionCard key={occasion} id={occasion} active={activeOccasion} />
+          <OptionCard
+            key={occasion}
+            step='occasion'
+            id={occasion as TOccasion}
+            active={active}
+            onClick={() => dispatch(setOccasion(occasion as TOccasion))}
+          />
         ))}
       </Stack>
     </Stack>

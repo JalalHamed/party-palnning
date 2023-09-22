@@ -21,7 +21,7 @@ export type TOccasion =
   | 'anniversary'
   | 'birthday'
   | 'dinner'
-  | 'meetUp'
+  | 'meet-up'
   | 'other';
 
 export interface IHistory {
@@ -29,11 +29,30 @@ export interface IHistory {
   date: Date;
 }
 
+export type TGuestSize = 'small' | 'medium' | 'large';
+
+export type TSteps = 'occasion' | 'guestSize';
+
 export interface IEvent {
+  step: TSteps;
   occasion?: TOccasion;
+  guestSize?: TGuestSize;
 }
 
 export interface IOptionCardProps {
-  id: string;
-  active: string;
+  step: 'occasion' | 'guest-size';
+  id: TOccasion | TGuestSize;
+  active: TOccasion | TGuestSize;
+  onClick: any;
+}
+
+export interface IColorSlice {
+  anniversary: string;
+  birthday: string;
+  dinner: string;
+  'meet-up': string;
+  other: string;
+  small: string;
+  medium: string;
+  large: string;
 }

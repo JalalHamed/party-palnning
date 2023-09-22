@@ -7,6 +7,9 @@ const basePalette = {
     critical: '#FD5E66',
     success: '#35AC82',
   },
+  action: {
+    disabledBackground: '#76A9FF',
+  },
 };
 
 export default basePalette;

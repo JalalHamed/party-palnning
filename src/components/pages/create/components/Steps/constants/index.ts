@@ -5,3 +5,5 @@ export const OCCASIONS = [
   'meet-up',
   'other',
 ];
+
+export const GUEST_SIZE = ['small', 'medium', 'large'];

@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { TOccasion } from 'types';
 
 export interface IStepsProps {
-  step: string;
+  step: 'occasion';
 }
 
 export interface IOccasionProps {

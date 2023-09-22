@@ -1,10 +1,10 @@
 import { AppLayout } from 'components/global';
-import { FC, useState } from 'react';
+import { FC } from 'react';
+import { useSelector } from 'react-redux';
 import { Header, Steps } from './components';
-import { TStep } from './types';
 
 const Create: FC = () => {
-  const [step] = useState<TStep>('occasion');
+  const step = useSelector((state: any) => state.event.step);
 
   return (
     <AppLayout gap='16px'>

@@ -11,13 +11,29 @@
   "create": {
     "header": "ایجاد رویداد جدید",
 
-    "occasions": {
+    "occasion": {
       "title": "مناسبت چیه؟",
       "birthday": "تولد",
       "anniversary": "سالگرد",
       "dinner": "شام",
       "meet-up": "دورهمی",
       "other": "سایر"
+    },
+
+    "guest-size": {
+      "title": "تعداد مهمانان چند نفر است؟",
+      "small": {
+        "title": "کوچک",
+        "subtitle": "(4-20) مهمان"
+      },
+      "medium": {
+        "title": "متوسط",
+        "subtitle": "(20-60) مهمان"
+      },
+      "large": {
+        "title": "بزرگ",
+        "subtitle": "(60+) مهمان"
+      }
     }
   }
 }

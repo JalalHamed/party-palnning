@@ -5,10 +5,13 @@ import {
   Birthday,
   Dark,
   Dinner,
+  Large,
   Light,
+  Medium,
   MeetUp,
   Other,
   ProfilePicWrapper,
+  Small,
 } from './components';
 
 const Icon = ({ ...rest }: SvgIconProps) => {
@@ -25,6 +28,9 @@ const Icon = ({ ...rest }: SvgIconProps) => {
           light: <Light {...rest} />,
           dark: <Dark {...rest} />,
           arrowLeft: <ArrowLeft {...rest} />,
+          small: <Small {...rest} />,
+          medium: <Medium {...rest} />,
+          large: <Large {...rest} />,
         }[rest.id as string]
       }
     </>

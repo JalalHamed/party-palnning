@@ -11,13 +11,29 @@
   "create": {
     "header": "Create a New Event",
 
-    "occasions": {
+    "occasion": {
       "title": "What is the occasion?",
       "birthday": "Birthday",
       "anniversary": "Anniversary",
       "dinner": "Dinner",
       "meet-up": "Meet up",
       "other": "Other"
+    },
+
+    "guest-size": {
+      "title": "What is the size of the guest list?",
+      "small": {
+        "title": "Small",
+        "subtitle": "(4-20) guests"
+      },
+      "medium": {
+        "title": "Medium",
+        "subtitle": "(20-60) guests"
+      },
+      "large": {
+        "title": "Large",
+        "subtitle": "(60+) guests"
+      }
     }
   }
 }
