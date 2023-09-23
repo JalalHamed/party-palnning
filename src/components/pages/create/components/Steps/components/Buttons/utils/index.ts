@@ -41,3 +41,9 @@ export const getPrevStep = (step: TStep) => {
       return step;
   }
 };
+
+export const convertToUnix = (date: string, time: string): number => {
+  const [day, month, year] = date.split('-').map(Number);
+  const [hours, minutes] = time.split(':').map(Number);
+  return Date.UTC(year, month - 1, day, hours, minutes);
+};

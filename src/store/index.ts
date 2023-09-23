@@ -9,11 +9,13 @@ import {
   persistStore,
 } from 'redux-persist';
 import eventSlice from './eventSlice';
+import eventsSlice from './eventsSlice';
 import themeSlice from './themeSlice';
 
 const rootReducer = combineReducers({
   theme: themeSlice,
   event: eventSlice,
+  events: eventsSlice,
 });
 
 export type TState = ReturnType<typeof rootReducer>;

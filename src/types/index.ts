@@ -78,13 +78,18 @@ export interface IEvent {
   games?: TGames;
 }
 
-export interface IEvents {
+export interface ICreatedEvent {
+  id: number;
   name: string;
   timestamp: string;
   occasion: TOccasion;
-  eInvite: boolean;
+  eInvite: TEInvite;
   food: TFood;
   alcohol: TAlcohol;
   decoration: TDecoration;
   games: TGames;
+}
+
+export interface IEvents {
+  events: ICreatedEvent[];
 }

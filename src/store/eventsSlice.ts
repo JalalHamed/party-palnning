@@ -1,15 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import localforage from 'localforage';
 import { persistReducer } from 'redux-persist';
-import { IEvents } from 'types';
+import { ICreatedEvent, IEvents } from 'types';
 
-const initialState: IEvents[] | [] = [];
+const initialState: IEvents = {
+  events: [],
+};
 
 const eventsSlice = createSlice({
   name: 'events',
   initialState,
   reducers: {
-    // createEvent
+    addEvent: (state, action: PayloadAction<ICreatedEvent>) => {
+      state.events.push(action.payload);
+    },
   },
 });
 
@@ -18,5 +22,5 @@ const persistedEventsReducer = persistReducer(
   eventsSlice.reducer
 );
 
-// export const {  } = eventsSlice.actions;
+export const { addEvent } = eventsSlice.actions;
 export default persistedEventsReducer;

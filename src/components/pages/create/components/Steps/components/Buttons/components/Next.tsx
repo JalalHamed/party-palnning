@@ -2,8 +2,18 @@ import { Button, Typography } from '@mui/material';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { TState } from 'store';
 import { reset, setStep } from 'store/eventSlice';
+import { addEvent } from 'store/eventsSlice';
+import {
+  TAlcohol,
+  TDecoration,
+  TEInvite,
+  TFood,
+  TGames,
+  TOccasion,
+} from 'types';
 import { isValidDate, isValidTime } from 'utils';
 import { getNextStep } from '../utils';
 
@@ -12,6 +22,7 @@ const Next: FC = () => {
   const dispatch = useDispatch();
   const event = useSelector((state: TState) => state.event);
   const width = event.step === 'occasion' ? '100%' : '69%';
+  const navigate = useNavigate();
 
   const getDisabledStatus = (): boolean => {
     if (event.step === 'form')
@@ -26,7 +37,27 @@ const Next: FC = () => {
 
   const handleClick = () => {
     if (event.step !== 'games') dispatch(setStep(getNextStep(event.step)));
-    else dispatch(reset());
+    // handle submit
+    else {
+      dispatch(
+        addEvent({
+          id: Date.now(),
+          name: event.form.eventName as string,
+          timestamp: `${(event.form.date as string)
+            .split('-')
+            .reverse()
+            .join('-')}T${event.form.time as string}:00`,
+          occasion: event.occasion as TOccasion,
+          eInvite: event.eInvite as TEInvite,
+          food: event.food as TFood,
+          alcohol: event.alcohol as TAlcohol,
+          decoration: event.decoration as TDecoration,
+          games: event.games as TGames,
+        })
+      );
+      dispatch(reset());
+      navigate('/');
+    }
   };
 
   return (
