@@ -14,6 +14,28 @@ const eventsSlice = createSlice({
     addEvent: (state, action: PayloadAction<ICreatedEvent>) => {
       state.events.push(action.payload);
     },
+    switchIsDone: (
+      state,
+      action: PayloadAction<{
+        eventId: number;
+        todoIndex: number;
+        isDone: boolean;
+      }>
+    ) => {
+      state.events
+        .filter((event) => event.id === action.payload.eventId)[0]
+        .todos.filter(
+          (_, index) => index === action.payload.todoIndex
+        )[0].isDone = action.payload.isDone;
+    },
+    setTodo: (
+      state,
+      action: PayloadAction<{ eventId: number; value: string }>
+    ) => {
+      state.events
+        .filter((event) => event.id === action.payload.eventId)[0]
+        .todos.push({ title: action.payload.value, isDone: false });
+    },
   },
 });
 
@@ -22,5 +44,5 @@ const persistedEventsReducer = persistReducer(
   eventsSlice.reducer
 );
 
-export const { addEvent } = eventsSlice.actions;
+export const { addEvent, switchIsDone, setTodo } = eventsSlice.actions;
 export default persistedEventsReducer;

@@ -86,5 +86,10 @@
       "no": "خیر",
       "i-have-at-home": "خونه بورد گیم دارم"
     }
+  },
+
+  "checklist": {
+    "header": "چک لیست",
+    "add": "Tap to add a new item to the list"
   }
 }
