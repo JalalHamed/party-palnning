@@ -1,7 +1,7 @@
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import UserProfilePic from 'assets/images/User.png';
 import { Icon, ThemeLangButtons } from 'components/global';
-import { useIsFa } from 'hooks/useIsFa';
+import { useIsFa } from 'hooks';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 

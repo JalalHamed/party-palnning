@@ -76,7 +76,9 @@ const TextOptions: FC = () => {
             }}
             onClick={() => handleClick(option)}
           >
-            {t(`create.${getI18nStepKey(event.step)}.${option}`)}
+            <Typography variant='body2'>
+              {t(`create.${getI18nStepKey(event.step)}.${option}`)}
+            </Typography>
           </Box>
         ))}
       </Stack>

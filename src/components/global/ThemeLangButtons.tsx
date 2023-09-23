@@ -1,5 +1,5 @@
 import { Stack, Typography } from '@mui/material';
-import { useIsFa } from 'hooks/useIsFa';
+import { useIsFa } from 'hooks';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';

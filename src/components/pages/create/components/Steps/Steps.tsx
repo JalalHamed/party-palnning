@@ -9,7 +9,7 @@ const Steps: FC = () => {
   const displayStep = () => {
     if (event.step === 'occasion' || event.step === 'guestSize')
       return <ImageOptions />;
-    if (event.step === 'form') return <Form />;
+    else if (event.step === 'form') return <Form />;
     return <TextOptions />;
   };
 

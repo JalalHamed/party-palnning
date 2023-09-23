@@ -8,14 +8,12 @@ import {
   REHYDRATE,
   persistStore,
 } from 'redux-persist';
-import colorSlice from './colorSlice';
 import eventSlice from './eventSlice';
 import themeSlice from './themeSlice';
 
 const rootReducer = combineReducers({
   theme: themeSlice,
   event: eventSlice,
-  color: colorSlice,
 });
 
 export type TState = ReturnType<typeof rootReducer>;

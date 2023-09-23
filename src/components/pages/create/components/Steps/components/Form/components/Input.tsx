@@ -1,5 +1,6 @@
 import { Box, InputBase, Stack, Typography } from '@mui/material';
 import { Icon } from 'components/global';
+import { useIsFa } from 'hooks';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +8,6 @@ import { TState } from 'store';
 import { setBudget, setDate, setEventName, setTime } from 'store/eventSlice';
 import { isValidDate, isValidTime } from 'utils';
 import { IInput } from '../types';
-import { useIsFa } from 'hooks/useIsFa';
 
 const Input: FC<IInput> = ({ id, i18nKey, placeholder, hasIcon, type }) => {
   const { t } = useTranslation();

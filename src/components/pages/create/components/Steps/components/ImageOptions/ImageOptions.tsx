@@ -6,13 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TState } from 'store';
 import { setGuestSize, setOccasion } from 'store/eventSlice';
 import { TGuestSize, TOccasion } from 'types';
+import { COLORS } from './constants';
 import { getI18nStepKey, getOptions } from './utils';
 
 const ImageOptions: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const event = useSelector((state: TState) => state.event);
-  const colors = useSelector((state: TState) => state.color);
   const isOccasion = event.step === 'occasion';
   const options = getOptions(event.step);
 
@@ -44,17 +44,17 @@ const ImageOptions: FC = () => {
             flexGrow={{ sm: 1 }}
             borderRadius='8px'
             bgcolor={
-              isSelected(option) ? alpha(colors[option], 0.15) : 'base.cards'
+              isSelected(option) ? alpha(COLORS[option], 0.15) : 'base.cards'
             }
             alignItems='center'
             justifyContent={!isOccasion ? 'flex-end' : 'center'}
-            border={isSelected(option) ? `1px solid ${colors[option]}` : 'none'}
+            border={isSelected(option) ? `1px solid ${COLORS[option]}` : 'none'}
             gap='8px'
             paddingBottom={{ xs: !isOccasion ? '16px' : 0, sm: '16px' }}
             sx={{
               cursor: 'pointer',
               '&:hover': {
-                backgroundColor: alpha(colors[option], 0.15),
+                backgroundColor: alpha(COLORS[option], 0.15),
               },
             }}
             onClick={() => handleClick(option)}

@@ -1,5 +1,5 @@
 import { SvgIconProps } from '@mui/material';
-import { useIsFa } from 'hooks/useIsFa';
+import { useIsFa } from 'hooks';
 
 export default function Budget({ ...rest }: SvgIconProps) {
   const isFa = useIsFa();
