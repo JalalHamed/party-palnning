@@ -7,6 +7,7 @@ import {
   TDecoration,
   TEInvite,
   TFoodArrangement,
+  TGames,
   TGuestSize,
   TOccasion,
   TStep,
@@ -26,6 +27,7 @@ const initialState: IEvent = {
   foodArrangement: undefined,
   alcohol: undefined,
   decoration: undefined,
+  games: undefined,
 };
 
 const eventSlice = createSlice({
@@ -65,6 +67,9 @@ const eventSlice = createSlice({
     setDecoration: (state, action: PayloadAction<TDecoration>) => {
       state.decoration = action.payload;
     },
+    setGames: (state, action: PayloadAction<TGames>) => {
+      state.games = action.payload;
+    },
   },
 });
 
@@ -85,5 +90,6 @@ export const {
   setFoodArrangement,
   setAlcohol,
   setDecoration,
+  setGames,
 } = eventSlice.actions;
 export default persistedEventReducer;

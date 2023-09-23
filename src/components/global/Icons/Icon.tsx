@@ -11,6 +11,7 @@ import {
   Dinner,
   EInvite,
   FoodArrangement,
+  Games,
   Large,
   Light,
   Medium,
@@ -45,6 +46,7 @@ const Icon = ({ ...rest }: SvgIconProps) => {
           foodArrangement: <FoodArrangement {...rest} />,
           alcohol: <Alcohol {...rest} />,
           decoration: <Decoration {...rest} />,
+          games: <Games {...rest} />,
         }[rest.id as string]
       }
     </>

@@ -15,6 +15,7 @@ import Alcohol from './text-options/Alcohol';
 import Decoration from './text-options/Decoration';
 import EInvite from './text-options/EInvite';
 import FoodArrangement from './text-options/FoodArrangement';
+import Games from './text-options/Games';
 import Dark from './theme-mode/Dark';
 import Light from './theme-mode/Light';
 
@@ -30,6 +31,7 @@ export {
   Dinner,
   EInvite,
   FoodArrangement,
+  Games,
   Large,
   Light,
   Medium,

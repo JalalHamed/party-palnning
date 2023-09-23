@@ -43,7 +43,8 @@ export type TStep =
   | 'eInvite'
   | 'foodArrangement'
   | 'alcohol'
-  | 'decoration';
+  | 'decoration'
+  | 'games';
 
 export interface IForm {
   eventName?: string;
@@ -64,6 +65,8 @@ export type TAlcohol = 'yes-order' | 'yes-have' | 'bring-your-own' | 'no';
 
 export type TDecoration = 'yes' | 'no' | 'i-decorate-myself';
 
+export type TGames = 'yes' | 'no' | 'i-have-at-home';
+
 export interface IEvent {
   step: TStep;
   occasion?: TOccasion;
@@ -73,6 +76,7 @@ export interface IEvent {
   foodArrangement?: TFoodArrangement;
   alcohol?: TAlcohol;
   decoration?: TDecoration;
+  games?: TGames;
 }
 
 export interface IOptionCardProps {

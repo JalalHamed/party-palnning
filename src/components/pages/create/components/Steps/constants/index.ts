@@ -1,3 +1,5 @@
+import { TStep } from 'types';
+
 export const OCCASIONS = [
   'anniversary',
   'birthday',
@@ -8,13 +10,15 @@ export const OCCASIONS = [
 
 export const GUEST_SIZE = ['small', 'medium', 'large'];
 
-export const STEPS = [
+export const STEPS: TStep[] = [
   'occasion',
   'guestSize',
   'form',
   'eInvite',
   'foodArrangement',
   'alcohol',
+  'decoration',
+  'games',
 ]; // orders matter
 
 export const FORM_INPUTS = [

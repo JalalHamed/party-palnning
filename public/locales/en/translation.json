@@ -2,6 +2,7 @@
   "greetings": "Hi, {{name}} 👋",
   "next": "Next",
   "previous": "Previous",
+  "submit": "Submit",
 
   "plans": {
     "no-upcoming": "No Upcoming House Party",
@@ -71,6 +72,13 @@
       "yes": "Yes",
       "no": "No",
       "i-decorate-myself": "I will decorate myself"
+    },
+
+    "games": {
+      "title": "Do you plan to rent board games?",
+      "yes": "Yes",
+      "no": "No",
+      "i-have-at-home": "I have board games at home"
     }
   }
 }

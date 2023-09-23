@@ -1,4 +1,10 @@
-import { TAlcohol, TDecoration, TEInvite, TFoodArrangement } from 'types';
+import {
+  TAlcohol,
+  TDecoration,
+  TEInvite,
+  TFoodArrangement,
+  TGames,
+} from 'types';
 
 export const E_INVITE_OPTIONS: TEInvite[] = ['yes', 'no'];
 
@@ -21,3 +27,5 @@ export const DECORATION_OPTIONS: TDecoration[] = [
   'no',
   'i-decorate-myself',
 ];
+
+export const GAMES_OPTIONS: TGames[] = ['yes', 'no', 'i-have-at-home'];

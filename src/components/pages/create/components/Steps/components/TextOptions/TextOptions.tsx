@@ -9,8 +9,15 @@ import {
   setDecoration,
   setEInvite,
   setFoodArrangement,
+  setGames,
 } from 'store/eventSlice';
-import { TAlcohol, TDecoration, TEInvite, TFoodArrangement } from 'types';
+import {
+  TAlcohol,
+  TDecoration,
+  TEInvite,
+  TFoodArrangement,
+  TGames,
+} from 'types';
 import { getI18nStepKey, getOptions } from './utils';
 
 const TextOptions: FC = () => {
@@ -38,6 +45,9 @@ const TextOptions: FC = () => {
         break;
       case 'decoration':
         dispatch(setDecoration(option as TDecoration));
+        break;
+      case 'games':
+        dispatch(setGames(option as TGames));
         break;
     }
   };

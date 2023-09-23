@@ -38,7 +38,7 @@ const Next: FC = () => {
       onClick={() => dispatch(setStep(getNextStep(event.step)))}
     >
       <Typography variant='body2' color='#FFF'>
-        {t('next')}
+        {event.step === 'games' ? t('submit') : t('next')}
       </Typography>
     </Button>
   );

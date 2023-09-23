@@ -14,6 +14,8 @@ export const getNextStep = (step: TStep) => {
       return 'alcohol';
     case 'alcohol':
       return 'decoration';
+    case 'decoration':
+      return 'games';
     default:
       return step;
   }
@@ -33,6 +35,8 @@ export const getPrevStep = (step: TStep) => {
       return 'foodArrangement';
     case 'decoration':
       return 'alcohol';
+    case 'games':
+      return 'decoration';
     default:
       return step;
   }
