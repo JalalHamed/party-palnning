@@ -11,7 +11,9 @@
     "outdate": "جشن های خانگی قبلی",
     "upcoming": "در راه",
     "create-new": "ایجاد جدید",
-    "days-to-go": "{{days}} روز مانده"
+    "days-to-go": "{{days}} روز مانده",
+    "todo": "انجام نشده",
+    "done": "انجام شده"
   },
 
   "create": {

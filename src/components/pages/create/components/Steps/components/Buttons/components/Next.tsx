@@ -1,4 +1,5 @@
 import { Button, Typography } from '@mui/material';
+import { STEPS } from 'constant';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,16 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import { TState } from 'store';
 import { reset, setStep } from 'store/eventSlice';
 import { addEvent } from 'store/eventsSlice';
-import {
-  TAlcohol,
-  TDecoration,
-  TEInvite,
-  TFood,
-  TGames,
-  TOccasion,
-} from 'types';
+import { TOccasion } from 'types';
 import { isValidDate, isValidTime } from 'utils';
-import { getNextStep } from '../utils';
+import { getDefaultTodos } from '../utils';
 
 const Next: FC = () => {
   const { t } = useTranslation();
@@ -36,7 +30,8 @@ const Next: FC = () => {
   };
 
   const handleClick = () => {
-    if (event.step !== 'games') dispatch(setStep(getNextStep(event.step)));
+    if (event.step !== 'games')
+      dispatch(setStep(STEPS[STEPS.indexOf(event.step) + 1]));
     // handle submit
     else {
       dispatch(
@@ -48,11 +43,7 @@ const Next: FC = () => {
             .reverse()
             .join('-')}T${event.form.time as string}:00`,
           occasion: event.occasion as TOccasion,
-          eInvite: event.eInvite as TEInvite,
-          food: event.food as TFood,
-          alcohol: event.alcohol as TAlcohol,
-          decoration: event.decoration as TDecoration,
-          games: event.games as TGames,
+          todos: getDefaultTodos(event),
         })
       );
       dispatch(reset());

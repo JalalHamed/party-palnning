@@ -1,10 +1,10 @@
 import { Button, Typography, alpha, useTheme } from '@mui/material';
+import { STEPS } from 'constant';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { setStep } from 'store/eventSlice';
 import { TStep } from 'types';
-import { getPrevStep } from '../utils';
 
 const Previous: FC<{ step: TStep }> = ({ step }) => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const Previous: FC<{ step: TStep }> = ({ step }) => {
           backgroundColor: alpha(palette.input.background, 0.5),
         },
       }}
-      onClick={() => dispatch(setStep(getPrevStep(step)))}
+      onClick={() => dispatch(setStep(STEPS[STEPS.indexOf(step) - 1]))}
     >
       <Typography variant='body2' color='#FFF'>
         {t('previous')}

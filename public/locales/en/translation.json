@@ -11,7 +11,9 @@
     "outdate": "Previous House Parties",
     "upcoming": "Upcoming",
     "create-new": "Create New",
-    "days-to-go": "{{days}} Days to go"
+    "days-to-go": "{{days}} Days to go",
+    "todo": "To Do",
+    "done": "Done"
   },
 
   "create": {

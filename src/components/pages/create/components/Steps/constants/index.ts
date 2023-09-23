@@ -6,20 +6,8 @@ import {
   TGames,
   TGuestSize,
   TOccasion,
-  TStep,
 } from 'types';
 import { IColors, IFormInput } from '../types';
-
-export const STEPS: TStep[] = [
-  'occasion',
-  'guestSize',
-  'form',
-  'eInvite',
-  'food',
-  'alcohol',
-  'decoration',
-  'games',
-]; // orders matter
 
 export const FORM_INPUTS: IFormInput[] = [
   { id: 'eventName', i18nKey: 'event-name' },

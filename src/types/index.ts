@@ -83,11 +83,7 @@ export interface ICreatedEvent {
   name: string;
   timestamp: string;
   occasion: TOccasion;
-  eInvite: TEInvite;
-  food: TFood;
-  alcohol: TAlcohol;
-  decoration: TDecoration;
-  games: TGames;
+  todos: { title: string; isDone: boolean }[];
 }
 
 export interface IEvents {

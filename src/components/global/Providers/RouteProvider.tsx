@@ -1,4 +1,4 @@
-import { CreateEvent, Plans } from 'components/pages';
+import { Checklist, CreateEvent, Plans } from 'components/pages';
 import { FC } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
@@ -10,6 +10,10 @@ const router = createBrowserRouter([
   {
     path: '/create',
     element: <CreateEvent />,
+  },
+  {
+    path: '/event/:id',
+    element: <Checklist />,
   },
 ]);
 

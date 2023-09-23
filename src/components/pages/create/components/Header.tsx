@@ -1,11 +1,11 @@
 import { LinearProgress, Stack, Typography } from '@mui/material';
 import { Icon, ThemeLangButtons } from 'components/global';
+import { STEPS } from 'constant';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { TState } from 'store';
-import { STEPS } from './Steps/constants';
 
 const Header: FC = () => {
   const { t } = useTranslation();
