@@ -3,21 +3,14 @@ import Clipboard from 'assets/images/Clipboard.png';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { CardWrapper } from './styled';
 
 const CreateEventCard: FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
-    <Stack
-      direction='row'
-      padding='16px'
-      borderRadius='8px'
-      justifyContent='space-between'
-      sx={{
-        background: 'linear-gradient(to right, #50586A, #1E2530)',
-      }}
-    >
+    <CardWrapper>
       <Stack gap='16px'>
         <Stack gap='8px'>
           <Typography variant='body1' color='#FFF'>
@@ -44,7 +37,7 @@ const CreateEventCard: FC = () => {
         width='76px'
         height='94px'
       />
-    </Stack>
+    </CardWrapper>
   );
 };
 

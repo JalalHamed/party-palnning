@@ -7,7 +7,11 @@
   "plans": {
     "no-upcoming": "No Upcoming House Party",
     "plan-party": "Plan your house party",
-    "create": "Create new Event"
+    "create": "Create new Event",
+    "outdate": "Previous House Parties",
+    "upcoming": "Upcoming",
+    "create-new": "Create New",
+    "days-to-go": "{{days}} Days to go"
   },
 
   "create": {
