@@ -6,7 +6,7 @@ import {
   TAlcohol,
   TDecoration,
   TEInvite,
-  TFoodArrangement,
+  TFood,
   TGames,
   TGuestSize,
   TOccasion,
@@ -24,7 +24,7 @@ const initialState: IEvent = {
     budget: undefined,
   },
   eInvite: undefined,
-  foodArrangement: undefined,
+  food: undefined,
   alcohol: undefined,
   decoration: undefined,
   games: undefined,
@@ -58,8 +58,8 @@ const eventSlice = createSlice({
     setEInvite: (state, action: PayloadAction<TEInvite>) => {
       state.eInvite = action.payload;
     },
-    setFoodArrangement: (state, action: PayloadAction<TFoodArrangement>) => {
-      state.foodArrangement = action.payload;
+    setFood: (state, action: PayloadAction<TFood>) => {
+      state.food = action.payload;
     },
     setAlcohol: (state, action: PayloadAction<TAlcohol>) => {
       state.alcohol = action.payload;
@@ -70,6 +70,7 @@ const eventSlice = createSlice({
     setGames: (state, action: PayloadAction<TGames>) => {
       state.games = action.payload;
     },
+    reset: () => initialState,
   },
 });
 
@@ -87,9 +88,10 @@ export const {
   setTime,
   setBudget,
   setEInvite,
-  setFoodArrangement,
+  setFood,
   setAlcohol,
   setDecoration,
   setGames,
+  reset,
 } = eventSlice.actions;
 export default persistedEventReducer;

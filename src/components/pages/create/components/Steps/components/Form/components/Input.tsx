@@ -45,7 +45,7 @@ const Input: FC<IInput> = ({ id, i18nKey, placeholder, hasIcon, type }) => {
       <Typography variant='body2'>{t(`create.form.${i18nKey}`)}</Typography>
       <Box position='relative'>
         <InputBase
-          value={form?.[id]}
+          value={form?.[id] ?? ''} // ensuring value is always a string
           onChange={(e) => handleChange(e.target.value)}
           sx={{
             bgcolor: 'base.cards',

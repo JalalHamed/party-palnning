@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { TState } from 'store';
-import { setStep } from 'store/eventSlice';
+import { reset, setStep } from 'store/eventSlice';
 import { isValidDate, isValidTime } from 'utils';
 import { getNextStep } from '../utils';
 
@@ -24,6 +24,11 @@ const Next: FC = () => {
     return !event[event.step];
   };
 
+  const handleClick = () => {
+    if (event.step !== 'games') dispatch(setStep(getNextStep(event.step)));
+    else dispatch(reset());
+  };
+
   return (
     <Button
       variant='contained'
@@ -35,7 +40,7 @@ const Next: FC = () => {
         opacity: !event.step ? 0.5 : 1,
       }}
       disabled={getDisabledStatus()}
-      onClick={() => dispatch(setStep(getNextStep(event.step)))}
+      onClick={handleClick}
     >
       <Typography variant='body2' color='#FFF'>
         {event.step === 'games' ? t('submit') : t('next')}

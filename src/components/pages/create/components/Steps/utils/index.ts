@@ -3,31 +3,22 @@ import {
   ALCOHOL_OPTIONS,
   DECORATION_OPTIONS,
   E_INVITE_OPTIONS,
-  FOOD_ARRANGEMENT_OPTIONS,
+  FOOD_OPTIONS,
   GAMES_OPTIONS,
+  GUEST_SIZE_OPTIONS,
+  OCCASION_OPTIONS,
 } from '../constants';
-
-export const getI18nStepKey = (step: TStep) => {
-  switch (step) {
-    case 'eInvite':
-      return 'e-invite';
-    case 'foodArrangement':
-      return 'food-arrangement';
-    case 'alcohol':
-      return 'alcohol';
-    case 'decoration':
-      return 'decoration';
-    case 'games':
-      return 'games';
-  }
-};
 
 export const getOptions = (step: TStep) => {
   switch (step) {
+    case 'occasion':
+      return OCCASION_OPTIONS;
+    case 'guestSize':
+      return GUEST_SIZE_OPTIONS;
     case 'eInvite':
       return E_INVITE_OPTIONS;
-    case 'foodArrangement':
-      return FOOD_ARRANGEMENT_OPTIONS;
+    case 'food':
+      return FOOD_OPTIONS;
     case 'alcohol':
       return ALCOHOL_OPTIONS;
     case 'decoration':

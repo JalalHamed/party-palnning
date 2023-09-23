@@ -1,6 +1,6 @@
 import { SvgIconProps } from '@mui/material';
 
-export default function FoodArrangement({ ...rest }: SvgIconProps) {
+export default function Food({ ...rest }: SvgIconProps) {
   return (
     <svg
       width='113'

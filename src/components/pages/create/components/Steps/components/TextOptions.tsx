@@ -8,17 +8,11 @@ import {
   setAlcohol,
   setDecoration,
   setEInvite,
-  setFoodArrangement,
+  setFood,
   setGames,
 } from 'store/eventSlice';
-import {
-  TAlcohol,
-  TDecoration,
-  TEInvite,
-  TFoodArrangement,
-  TGames,
-} from 'types';
-import { getI18nStepKey, getOptions } from './utils';
+import { TAlcohol, TDecoration, TEInvite, TFood, TGames } from 'types';
+import { getOptions } from '../utils';
 
 const TextOptions: FC = () => {
   const { t } = useTranslation();
@@ -26,6 +20,7 @@ const TextOptions: FC = () => {
   const options = getOptions(event.step);
   const { palette } = useTheme();
   const dispatch = useDispatch();
+  const i18nStepKey = event.step === 'eInvite' ? 'e-invite' : event.step;
 
   const isSelected = (option: string): boolean => {
     return event[event.step] === option;
@@ -36,8 +31,8 @@ const TextOptions: FC = () => {
       case 'eInvite':
         dispatch(setEInvite(option as TEInvite));
         break;
-      case 'foodArrangement':
-        dispatch(setFoodArrangement(option as TFoodArrangement));
+      case 'food':
+        dispatch(setFood(option as TFood));
         break;
       case 'alcohol':
         dispatch(setAlcohol(option as TAlcohol));
@@ -54,7 +49,7 @@ const TextOptions: FC = () => {
   return (
     <Stack gap='24px'>
       <Icon id={event.step} style={{ margin: '0 auto' }} />
-      <Typography>{t(`create.${getI18nStepKey(event.step)}.title`)}</Typography>
+      <Typography>{t(`create.${i18nStepKey}.title`)}</Typography>
       <Stack gap='16px'>
         {options?.map((option) => (
           <Box
@@ -77,7 +72,7 @@ const TextOptions: FC = () => {
             onClick={() => handleClick(option)}
           >
             <Typography variant='body2'>
-              {t(`create.${getI18nStepKey(event.step)}.${option}`)}
+              {t(`create.${i18nStepKey}.${option}`)}
             </Typography>
           </Box>
         ))}

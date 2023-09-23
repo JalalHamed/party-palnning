@@ -9,8 +9,8 @@ export const getNextStep = (step: TStep) => {
     case 'form':
       return 'eInvite';
     case 'eInvite':
-      return 'foodArrangement';
-    case 'foodArrangement':
+      return 'food';
+    case 'food':
       return 'alcohol';
     case 'alcohol':
       return 'decoration';
@@ -29,10 +29,10 @@ export const getPrevStep = (step: TStep) => {
       return 'guestSize';
     case 'eInvite':
       return 'form';
-    case 'foodArrangement':
+    case 'food':
       return 'eInvite';
     case 'alcohol':
-      return 'foodArrangement';
+      return 'food';
     case 'decoration':
       return 'alcohol';
     case 'games':

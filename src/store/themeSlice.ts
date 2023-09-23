@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import localforage from 'localforage';
 import { persistReducer } from 'redux-persist';
-import { TTheme } from 'types';
+import { ITheme, TTheme } from 'types';
 
-const initialState = {
+const initialState: ITheme = {
   theme: 'dark',
 };
 

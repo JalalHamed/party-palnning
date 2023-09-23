@@ -22,17 +22,16 @@ declare module '@mui/material/styles' {
 
 export type TTheme = 'dark' | 'light';
 
+export interface ITheme {
+  theme: TTheme;
+}
+
 export type TOccasion =
   | 'anniversary'
   | 'birthday'
   | 'dinner'
   | 'meet-up'
   | 'other';
-
-export interface IHistory {
-  title: string;
-  date: Date;
-}
 
 export type TGuestSize = 'small' | 'medium' | 'large';
 
@@ -41,7 +40,7 @@ export type TStep =
   | 'guestSize'
   | 'form'
   | 'eInvite'
-  | 'foodArrangement'
+  | 'food'
   | 'alcohol'
   | 'decoration'
   | 'games';
@@ -55,7 +54,7 @@ export interface IForm {
 
 export type TEInvite = 'yes' | 'no';
 
-export type TFoodArrangement =
+export type TFood =
   | 'order-in'
   | 'home-cooked-food'
   | 'book-a-caterer'
@@ -73,26 +72,19 @@ export interface IEvent {
   guestSize?: TGuestSize;
   form: IForm;
   eInvite?: TEInvite;
-  foodArrangement?: TFoodArrangement;
+  food?: TFood;
   alcohol?: TAlcohol;
   decoration?: TDecoration;
   games?: TGames;
 }
 
-export interface IOptionCardProps {
-  step: 'occasion' | 'guest-size';
-  id: TOccasion | TGuestSize;
-  active: TOccasion | TGuestSize | undefined;
-  onClick: any;
-}
-
-export interface IColorSlice {
-  anniversary: string;
-  birthday: string;
-  dinner: string;
-  'meet-up': string;
-  other: string;
-  small: string;
-  medium: string;
-  large: string;
+export interface IEvents {
+  name: string;
+  timestamp: string;
+  occasion: TOccasion;
+  eInvite: boolean;
+  food: TFood;
+  alcohol: TAlcohol;
+  decoration: TDecoration;
+  games: TGames;
 }
