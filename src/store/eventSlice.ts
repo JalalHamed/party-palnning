@@ -4,6 +4,7 @@ import { persistReducer } from 'redux-persist';
 import {
   IEvent,
   TAlcohol,
+  TDecoration,
   TEInvite,
   TFoodArrangement,
   TGuestSize,
@@ -24,6 +25,7 @@ const initialState: IEvent = {
   eInvite: undefined,
   foodArrangement: undefined,
   alcohol: undefined,
+  decoration: undefined,
 };
 
 const eventSlice = createSlice({
@@ -60,6 +62,9 @@ const eventSlice = createSlice({
     setAlcohol: (state, action: PayloadAction<TAlcohol>) => {
       state.alcohol = action.payload;
     },
+    setDecoration: (state, action: PayloadAction<TDecoration>) => {
+      state.decoration = action.payload;
+    },
   },
 });
 
@@ -79,5 +84,6 @@ export const {
   setEInvite,
   setFoodArrangement,
   setAlcohol,
+  setDecoration,
 } = eventSlice.actions;
 export default persistedEventReducer;

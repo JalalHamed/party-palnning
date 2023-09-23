@@ -64,6 +64,13 @@
       "yes-have": "Yes, I have it",
       "bring-your-own": "Bring your own bottle",
       "no": "No"
+    },
+
+    "decoration": {
+      "title": "Do you wish to hire a decorator?",
+      "yes": "Yes",
+      "no": "No",
+      "i-decorate-myself": "I will decorate myself"
     }
   }
 }

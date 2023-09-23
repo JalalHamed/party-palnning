@@ -12,6 +12,7 @@ import Dinner from './occasions/Dinner';
 import MeetUp from './occasions/MeetUp';
 import Other from './occasions/Other';
 import Alcohol from './text-options/Alcohol';
+import Decoration from './text-options/Decoration';
 import EInvite from './text-options/EInvite';
 import FoodArrangement from './text-options/FoodArrangement';
 import Dark from './theme-mode/Dark';
@@ -25,6 +26,7 @@ export {
   Budget,
   Dark,
   Date,
+  Decoration,
   Dinner,
   EInvite,
   FoodArrangement,

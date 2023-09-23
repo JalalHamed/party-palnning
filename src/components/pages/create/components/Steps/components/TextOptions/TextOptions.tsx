@@ -4,8 +4,13 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { TState } from 'store';
-import { setAlcohol, setEInvite, setFoodArrangement } from 'store/eventSlice';
-import { TAlcohol, TEInvite, TFoodArrangement } from 'types';
+import {
+  setAlcohol,
+  setDecoration,
+  setEInvite,
+  setFoodArrangement,
+} from 'store/eventSlice';
+import { TAlcohol, TDecoration, TEInvite, TFoodArrangement } from 'types';
 import { getI18nStepKey, getOptions } from './utils';
 
 const TextOptions: FC = () => {
@@ -30,6 +35,9 @@ const TextOptions: FC = () => {
         break;
       case 'alcohol':
         dispatch(setAlcohol(option as TAlcohol));
+        break;
+      case 'decoration':
+        dispatch(setDecoration(option as TDecoration));
         break;
     }
   };

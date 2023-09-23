@@ -1,4 +1,4 @@
-import { TAlcohol, TEInvite, TFoodArrangement } from 'types';
+import { TAlcohol, TDecoration, TEInvite, TFoodArrangement } from 'types';
 
 export const E_INVITE_OPTIONS: TEInvite[] = ['yes', 'no'];
 
@@ -14,4 +14,10 @@ export const ALCOHOL_OPTIONS: TAlcohol[] = [
   'yes-have',
   'bring-your-own',
   'no',
+];
+
+export const DECORATION_OPTIONS: TDecoration[] = [
+  'yes',
+  'no',
+  'i-decorate-myself',
 ];

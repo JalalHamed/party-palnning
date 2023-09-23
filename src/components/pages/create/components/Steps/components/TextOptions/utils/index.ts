@@ -1,7 +1,7 @@
-import { setEInvite, setFoodArrangement } from 'store/eventSlice';
 import { TStep } from 'types';
 import {
   ALCOHOL_OPTIONS,
+  DECORATION_OPTIONS,
   E_INVITE_OPTIONS,
   FOOD_ARRANGEMENT_OPTIONS,
 } from '../constants';
@@ -14,6 +14,8 @@ export const getI18nStepKey = (step: TStep) => {
       return 'food-arrangement';
     case 'alcohol':
       return 'alcohol';
+    case 'decoration':
+      return 'decoration';
   }
 };
 
@@ -25,16 +27,7 @@ export const getOptions = (step: TStep) => {
       return FOOD_ARRANGEMENT_OPTIONS;
     case 'alcohol':
       return ALCOHOL_OPTIONS;
-  }
-};
-
-export const useReducer = (step: TStep) => {
-  switch (step) {
-    case 'eInvite':
-      return setEInvite;
-    case 'foodArrangement':
-      return setFoodArrangement;
-    default:
-      return setFoodArrangement;
+    case 'decoration':
+      return DECORATION_OPTIONS;
   }
 };
