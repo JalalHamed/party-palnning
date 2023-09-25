@@ -38,7 +38,9 @@ const ImageOptions: FC = () => {
 
   return (
     <Stack gap='16px'>
-      <Typography variant='body2'>{t('create.guest-size.title')}</Typography>
+      <Typography variant='body2'>
+        {t(`create.${i18nStepKey}.title`)}
+      </Typography>
       <Stack direction='row' flexWrap='wrap' gap='14px'>
         {options?.map((option) => {
           // making sure option's type is one of TOccasion | TGuestSize

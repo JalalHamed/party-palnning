@@ -17,7 +17,7 @@ export const getDefaultTodos = (event: IEvent) => {
   if (event.alcohol === 'yes-order')
     todos.push({ title: 'Order Alcohol', isDone: false });
   if (event.decoration === 'yes')
-    todos.push({ title: 'Hire a decorator', isDone: false });
+    todos.push({ title: 'Hire a Decorator', isDone: false });
   if (event.games === 'yes')
     todos.push({ title: 'Rent Board Games', isDone: false });
   return todos;
